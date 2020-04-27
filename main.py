@@ -11,7 +11,7 @@ def index():
 
 @app.route('/files')
 def file():
-    return redirect(url_for('static', filename='/files/curriculojoao.pdf'))
+    return redirect(url_for('static', filename='files/curriculojoao.pdf'))
 
 
 if __name__ == '__main__':
