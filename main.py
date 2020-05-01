@@ -92,7 +92,7 @@ def enviarQuestao():
 def pegar_questao(q_id):
     for i in questoes:
         if i['id'] == q_id:
-            return  render_template('/questionario/questionario.html', name = resultado[0]['usuario'], questao = i['pergunta'], idQuestao = i['id'])
+            return render_template('/questionario/questionario.html', questao = i)
 
     return 'erro404', 404
 
@@ -160,6 +160,7 @@ def reseta():
         "totalQuestoes": len(questoes)
     }
     return redirect("/autoteste/login", code=302)
+
 
 
 if __name__ == '__main__':
