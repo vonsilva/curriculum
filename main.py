@@ -94,8 +94,7 @@ def pegar_questao(q_id):
         if i['id'] == q_id:
             return  render_template('/questionario/questionario.html', name = resultado[0]['usuario'], questao = i['pergunta'], idQuestao = i['id'])
 
-    erro404 = {'erro': 'Questao nao encontrada'}
-    return jsonify(erro404), 404
+    return 'erro404', 404
 
 
 @app.route('/autoteste/forms/name', methods=['POST', 'PUT'])
