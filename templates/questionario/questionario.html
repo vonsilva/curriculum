@@ -163,12 +163,12 @@
     </style>
 
     <div class="container">  
-      <form id="contact" action="/autoteste/responder/{{idQuestao}}" method="post">
+      <form id="contact" action="/autoteste/responder/{{questao['id']}}" method="post">
         <h3>Questionario Flask</h3>
         <h2>Vamos lá, {{name}}!</h2>
 
         <fieldset>
-            <label><h4>{{idQuestao}}. {{questao}}</h4></label>
+            <label><h4>{{questao['id']}}. {{questao['pergunta']}}</h4></label>
             <input placeholder="Resposta (Apenas Números)" type="text" id="resposta" name="resposta" required autofocus
             onkeypress="return event.charCode >= 48 && event.charCode <= 57">
         </fieldset>
