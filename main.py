@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from flask import Flask, jsonify, request, render_template, redirect, url_for, send_file
 import json
 
@@ -160,10 +161,6 @@ def reseta():
         "totalQuestoes": len(questoes)
     }
     return redirect("/autoteste/login", code=302)
-
-
-
-
 
 
 if __name__ == '__main__':
