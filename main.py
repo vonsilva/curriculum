@@ -107,7 +107,7 @@ def formName():
     nome = request.form['nome']
     resultado[0]['usuario'] = nome
     respostas[0][nome] = {}
-    return redirect("/autoteste/questao/1"), 200
+    return redirect("/autoteste/questao/1"), 302
 
 
 
