@@ -95,11 +95,7 @@ def enviarQuestao():
 
 @app.route('/autoteste/questao/<int:q_id>')
 def pegar_questao(q_id):
-    for i in questoes:
-        if i['id'] == q_id:
-            return render_template('/questionario/questionario.html')
-
-    return 'erro404', 404
+    return render_template('/questionario/questionario.html')
 
 
 @app.route('/autoteste/forms/name', methods=['POST', 'PUT'])
