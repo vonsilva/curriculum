@@ -8,6 +8,11 @@ app = Flask(__name__)
 # app.route relacionados ao index currículo
 @app.route('/')
 def index():
+    return redirect("/curriculo", code=302)
+
+
+@app.route('/curriculo')
+def curriculoIndex():
     return render_template('index.html')
 
 
@@ -92,7 +97,7 @@ def enviarQuestao():
 def pegar_questao(q_id):
     for i in questoes:
         if i['id'] == q_id:
-            return render_template('/questionario/questionario.html', questao = i)
+            return render_template('/questionario/questionario.html')
 
     return 'erro404', 404
 
