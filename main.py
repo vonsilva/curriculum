@@ -97,7 +97,7 @@ def enviarQuestao():
 def pegar_questao(q_id):
     for i in questoes:
         if i['id'] == q_id:
-            return render_template('/questionario/questionario.html', id=i['id']), 200
+            return render_template('/questionario/questionario.html', id=i['id'], qt=i['pergunta']), 200
 
     return 'erro404', 404
 
@@ -111,10 +111,10 @@ def formName():
 
 
 
-@app.route('/autoteste/responder/<int:q_id>', methods=['POST', 'PUT'])
+@app.route('/autoteste/responder/<int:q_id>', methods=['POST'])
 def responder(q_id):
-    questao = pegarQuestao(q_id)
     resposta = request.form['resposta']
+    questao = pegarQuestao(q_id)
 
     if questao == False:
         return 'Erro 404', 404
@@ -125,10 +125,10 @@ def responder(q_id):
 
 
     if q_id <= len(questoes):
-        return redirect("/autoteste/questao/"+str(q_id), code=302)
+        return redirect("/autoteste/questao/"+str(q_id))
     
     else:
-        return redirect("/autoteste/"+resultado[0]['usuario']+"/resultados", code=302)
+        return redirect("/autoteste/"+resultado[0]['usuario']+"/resultados")
 
 
 
