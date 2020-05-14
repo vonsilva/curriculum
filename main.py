@@ -107,7 +107,7 @@ def formName():
     nome = request.form['nome']
     resultado[0]['usuario'] = u'{}'.format(nome)
     respostas[0][nome] = {}
-    return redirect("/autoteste/questao/1")
+    return jsonify(resultado[0])
 
 
 
