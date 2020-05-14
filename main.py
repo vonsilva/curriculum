@@ -30,19 +30,17 @@ def file():
 
 # Aqui começa a sessão do Questionario
 
-qt1 = 'Se Maria tem duas pipocas doces e seu namorado Jose tem quatro pipocas, quantas pipocas Maria tem ao total?'
-qt2 = 'Se um mes tem 30 dias e Gustavo ganha 2 real por dia, quantos reais tera ao final do mes?'
 
 # Variáveis do Questionario
 questoes = [
     {
         'id': 1,
-        'pergunta': qt1,
+        'pergunta': 'Se Maria tem duas pipocas doces e seu namorado Jose tem quatro pipocas, quantas pipocas Maria tem ao total?',
         'corretas': ['Duas', 'duas', 'Dois', 'dois', '2', 2]
     },
     {
         'id': 2,
-        'pergunta': qt2,
+        'pergunta': 'Se um mes tem 30 dias e Gustavo ganha 2 reais por dia, quantos reais tera ao final do mes?',
         'corretas': ['Sessenta', 'sessenta', 60, '60']
     }
 ]
