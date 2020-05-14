@@ -35,12 +35,12 @@ def file():
 questoes = [
     {
         'id': 1,
-        'pergunta': 'Se Maria tem duas pipocas doces e seu namorado Jose tem quatro pipocas, quantas pipocas Maria tem ao total?',
+        'pergunta': 'Se Maria tem duas pipocas doces e seu namorado Jos\u00e9 tem quatro pipocas, quantas pipocas Maria tem ao total?',
         'corretas': ['Duas', 'duas', 'Dois', 'dois', '2', 2]
     },
     {
         'id': 2,
-        'pergunta': 'Se um mes tem 30 dias e Gustavo ganha 2 real por dia, quantos reais tera ao final do mes?',
+        'pergunta': 'Se um m\u00eas tem 30 dias e Gustavo ganha 2 real por dia, quantos reais ter\u00c1 ao final do m\u00eas?',
         'corretas': ['Sessenta', 'sessenta', 60, '60']
     }
 ]
@@ -107,7 +107,7 @@ def formName():
     nome = request.form['nome']
     resultado[0]['usuario'] = u'{}'.format(nome)
     respostas[0][nome] = {}
-    return jsonify(resultado[0]['usuario'])
+    return redirect("/autoteste/questao/1")
 
 
 
