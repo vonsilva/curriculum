@@ -127,7 +127,7 @@ def responder(q_id):
     if q_id <= len(questoes):
         return redirect("/autoteste/questao/"+str(q_id))
     
-    else:
+    elif len(questoes) >= q_id:
         return redirect("/autoteste/"+resultado[0]['usuario']+"/resultados")
 
 
@@ -158,7 +158,12 @@ def resultadosFinais():
 @app.route('/autoteste/reseta', methods=['POST', 'GET'])
 def reseta():
     respostas[0][0] = {}
-    resultado[0] = {}
+    resultado[0] = {
+        "usuario": None,
+        "acertos": 0,
+        "erros": 0,
+        "totalQuestoes": len(questoes)
+    }
     return redirect("/autoteste/login", code=302)
 
 
