@@ -106,7 +106,6 @@ def pegar_questao(q_id):
 def formName():
     nome = request.form['nome']
     resultado[0]['usuario'] = nome
-    respostas[0][nome] = {}
     return redirect("/autoteste/questao/1")
 
 
@@ -120,14 +119,14 @@ def responder(q_id):
         return 'Erro 404', 404
 
 
-    respostas[0][resultado[0]['usuario']][q_id] = resposta
+    respostas[0][q_id] = resposta
     q_id += 1
 
 
     if q_id <= len(questoes):
         return redirect("/autoteste/questao/"+str(q_id))
     
-    elif len(questoes) >= q_id:
+    else:
         return redirect("/autoteste/"+resultado[0]['usuario']+"/resultados")
 
 
@@ -136,7 +135,7 @@ def responder(q_id):
 @app.route('/autoteste/<username>/resultados',)
 def desempenho(username):
 
-    dicrespostas = respostas[0][username]
+    dicrespostas = respostas[0]
 
     for i in dicrespostas:
         questao = pegarQuestao(i)
@@ -157,7 +156,7 @@ def resultadosFinais():
 
 @app.route('/autoteste/reseta', methods=['POST', 'GET'])
 def reseta():
-    respostas[0][0] = {}
+    respostas = [{}]
     resultado[0] = {
         "usuario": None,
         "acertos": 0,
@@ -170,4 +169,4 @@ def reseta():
 
 if __name__ == '__main__':
     app.debug = True
-    app.run()
+    app.run(host = 'localhost', port = 5003)
