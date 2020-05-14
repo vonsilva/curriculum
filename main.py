@@ -35,12 +35,12 @@ def file():
 questoes = [
     {
         'id': 1,
-        'pergunta': 'Se Maria tem duas pipocas doces e seu namorado Jos\u00e9 tem quatro pipocas, quantas pipocas Maria tem ao total?',
+        'pergunta': 'Se Maria tem duas pipocas doces e seu namorado José tem quatro pipocas, quantas pipocas Maria tem ao total?'.encode(),
         'corretas': ['Duas', 'duas', 'Dois', 'dois', '2', 2]
     },
     {
         'id': 2,
-        'pergunta': 'Se um m\u00eas tem 30 dias e Gustavo ganha 2 real por dia, quantos reais ter\u00c1 ao final do m\u00eas?',
+        'pergunta': 'Se um mês tem 30 dias e Gustavo ganha 2 real por dia, quantos reais terá ao final do mês?'.encode(),
         'corretas': ['Sessenta', 'sessenta', 60, '60']
     }
 ]
