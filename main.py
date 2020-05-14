@@ -45,6 +45,15 @@ questoes = [
     }
 ]
 
+respostas = [{}]
+
+resultado = [{
+        "usuario": None,
+        "acertos": 0,
+        "erros": 0,
+        "totalQuestoes": len(questoes)
+    }
+]
 
 
 def pegarQuestao(q_id):
@@ -96,18 +105,8 @@ def pegar_questao(q_id):
 @app.route('/autoteste/forms/name', methods=['POST'])
 def formName():
     nome = request.form['nome']
-        
-    resultado = [{
-        "usuario": nome,
-        "acertos": 0,
-        "erros": 0,
-        "totalQuestoes": len(questoes)
-        }
-    ]
-        
-    respostas = [{}]
+    resultado[0]['usuario'] = nome
     respostas[0][nome] = {}
-
     return redirect("/autoteste/questao/1")
 
 
@@ -159,12 +158,7 @@ def resultadosFinais():
 @app.route('/autoteste/reseta', methods=['POST', 'GET'])
 def reseta():
     respostas[0][0] = {}
-    resultado[0] = {
-        "usuario": None,
-        "acertos": 0,
-        "erros": 0,
-        "totalQuestoes": len(questoes)
-    }
+    resultado[0] = {}
     return redirect("/autoteste/login", code=302)
 
 
