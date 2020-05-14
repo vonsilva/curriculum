@@ -35,12 +35,12 @@ def file():
 questoes = [
     {
         'id': 1,
-        'pergunta': 'Se Maria tem duas pipocas doces e seu namorado José tem quatro pipocas, quantas pipocas Maria tem ao total?',
+        'pergunta': 'Se Maria tem duas pipocas doces e seu namorado Jose tem quatro pipocas, quantas pipocas Maria tem ao total?',
         'corretas': ['Duas', 'duas', 'Dois', 'dois', '2', 2]
     },
     {
         'id': 2,
-        'pergunta': 'Se um mês tem 30 dias e Gustavo ganha 2 real por dia, quantos reais terá ao final do mês?',
+        'pergunta': 'Se um mes tem 30 dias e Gustavo ganha 2 real por dia, quantos reais tera ao final do mes?',
         'corretas': ['Sessenta', 'sessenta', 60, '60']
     }
 ]
@@ -97,7 +97,7 @@ def enviarQuestao():
 def pegar_questao(q_id):
     for i in questoes:
         if i['id'] == q_id:
-            return render_template('/questionario/questionario.html', id=i['id'], qt=i['pergunta']), 200
+            return render_template('/questionario/questionario.html', qt=i['pergunta']), 200
 
     return 'erro404', 404
 
@@ -107,7 +107,7 @@ def formName():
     nome = request.form['nome']
     resultado[0]['usuario'] = u'{}'.format(nome)
     respostas[0][nome] = {}
-    return jsonify(resultado[0])
+    return redirect("/autoteste/questao/1")
 
 
 
