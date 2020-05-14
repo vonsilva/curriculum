@@ -97,7 +97,7 @@ def enviarQuestao():
 def pegar_questao(q_id):
     for i in questoes:
         if i['id'] == q_id:
-            return render_template('/questionario/questionario.html', qt=i['pergunta']), 200
+            return render_template('/questionario/questionario.html', nome=resultado[0]['usuario'] , id=i['id'], qt=i['pergunta']), 200
 
     return 'erro404', 404
 
