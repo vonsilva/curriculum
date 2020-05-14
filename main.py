@@ -48,7 +48,7 @@ questoes = [
 respostas = [{}]
 
 resultado = [{
-        "usuario": None,
+        "usuario": 'Desconhecido',
         "acertos": 0,
         "erros": 0,
         "totalQuestoes": len(questoes)
@@ -107,7 +107,7 @@ def formName():
     nome = request.form['nome']
     resultado[0]['usuario'] = nome
     respostas[0][nome] = {}
-    return redirect("/autoteste/questao/1"), 200
+    return redirect("/autoteste/questao/1"),300
 
 
 
@@ -170,4 +170,4 @@ def reseta():
 
 if __name__ == '__main__':
     app.debug = True
-    app.run(debug=True)
+    app.run()
