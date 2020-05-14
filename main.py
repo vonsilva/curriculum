@@ -105,9 +105,9 @@ def pegar_questao(q_id):
 @app.route('/autoteste/forms/name', methods=['POST'])
 def formName():
     nome = request.form['nome']
-    resultado[0]['usuario'] = nome
+    resultado[0]['usuario'] = u'{}'.format(nome)
     respostas[0][nome] = {}
-    return redirect("/autoteste/questao/1"),300
+    return redirect("/autoteste/questao/1")
 
 
 
