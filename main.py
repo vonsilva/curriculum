@@ -48,7 +48,7 @@ questoes = [
 respostas = [{}]
 
 resultado = [{
-        "usuario": 'Desconhecido',
+        "usuario": None,
         "acertos": 0,
         "erros": 0,
         "totalQuestoes": len(questoes)
@@ -105,7 +105,7 @@ def pegar_questao(q_id):
 @app.route('/autoteste/forms/name', methods=['POST'])
 def formName():
     nome = request.form['nome']
-    resultado[0]['usuario'] = u'{}'.format(nome)
+    resultado[0]['usuario'] = nome
     respostas[0][nome] = {}
     return redirect("/autoteste/questao/1")
 
