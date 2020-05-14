@@ -30,8 +30,8 @@ def file():
 
 # Aqui começa a sessão do Questionario
 
-qt1 = 'Se Maria tem duas pipocas doces e seu namorado José tem quatro pipocas, quantas pipocas Maria tem ao total?'.encode()
-qt2 = 'Se um mês tem 30 dias e Gustavo ganha 2 real por dia, quantos reais terá ao final do mês?'.encode()
+qt1 = 'Se Maria tem duas pipocas doces e seu namorado Jose tem quatro pipocas, quantas pipocas Maria tem ao total?'
+qt2 = 'Se um mes tem 30 dias e Gustavo ganha 2 real por dia, quantos reais tera ao final do mes?'
 
 # Variáveis do Questionario
 questoes = [
