@@ -127,13 +127,13 @@ def responder(q_id):
         return redirect("/autoteste/questao/"+str(q_id))
     
     else:
-        return redirect("/autoteste/"+resultado[0]['usuario']+"/resultados")
+        return redirect("/autoteste/resultados")
 
 
 
 
-@app.route('/autoteste/<username>/resultados',)
-def desempenho(username):
+@app.route('/autoteste/resultados',)
+def desempenho():
 
     dicrespostas = respostas[0]
 
